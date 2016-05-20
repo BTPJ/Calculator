@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_basic"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="科学计算器"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@android:color/holo_red_dark" />
+
+    <!-- 结果显示框 -->
+
+    <EditText
+        android:id="@+id/et_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:layout_marginTop="20dp"
+        android:background="@android:drawable/edit_text"
+        android:cursorVisible="false"
+        android:ellipsize="start"
+        android:gravity="end"
+        android:singleLine="true"
+        android:text="0"
+        android:textColor="#0000FF"
+        android:textSize="28sp" />
+
+    <!-- 接下去采TableRow的格式进行布局设计 -->
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+
+        <!-- 清除输出窗口的所有内容 -->
+
+        <Button
+            android:id="@+id/btn_clear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="C"
+            android:textColor="#40FF00"
+            android:textSize="25sp" />
+
+        <!-- 退格键 -->
+
+        <Button
+            android:id="@+id/btn_backSpace"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="←"
+            android:textColor="#40FF00"
+            android:textSize="25sp" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- 弧度与角度间的切换 -->
+
+        <Button
+            android:id="@+id/btn_deg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="DEG"
+            android:textColor="#00FFFF"
+            android:textSize="25sp" />
+        <!-- 左括号 -->
+
+        <Button
+            android:id="@+id/btn_kuohaoLeft"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="("
+            android:textColor="#00FFFF"
+            android:textSize="25sp" />
+        <!-- 右括号 -->
+
+        <Button
+            android:id="@+id/btn_kuohaoRight"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=")"
+            android:textColor="#00FFFF"
+            android:textSize="25sp" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- 正弦计算 -->
+
+        <Button
+            android:id="@+id/btn_sin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="sin"
+            android:textColor="#FFFF00"
+            android:textSize="25sp" />
+        <!-- 余弦计算 -->
+
+        <Button
+            android:id="@+id/btn_cos"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="cos"
+            android:textColor="#FFFF00"
+            android:textSize="25sp" />
+        <!-- 正切计算 -->
+
+        <Button
+            android:id="@+id/btn_tan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="tan"
+            android:textColor="#FFFF00"
+            android:textSize="25sp" />
+        <!-- 阶乘计算 -->
+
+        <Button
+            android:id="@+id/btn_jiecheng"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="!"
+            android:textColor="#FFFF00"
+            android:textSize="25sp" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- 对数 -->
+
+        <Button
+            android:id="@+id/btn_log"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="log"
+            android:textColor="#FF0080"
+            android:textSize="25sp" />
+        <!-- 自然对数 -->
+
+        <Button
+            android:id="@+id/btn_In"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="In"
+            android:textColor="#FF0080"
+            android:textSize="25sp" />
+        <!-- 乘方 -->
+
+        <Button
+            android:id="@+id/btn_zhishu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="^"
+            android:textColor="#FF0080"
+            android:textSize="25sp" />
+        <!-- 开方 -->
+
+        <Button
+            android:id="@+id/btn_kaifang"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="√"
+            android:textColor="#FF0080"
+            android:textSize="25sp" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- 数字7 -->
+
+        <Button
+            android:id="@+id/btn7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="7"
+            android:textSize="25sp" />
+        <!-- 数字8 -->
+
+        <Button
+            android:id="@+id/btn8"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="8"
+            android:textSize="25sp" />
+        <!-- 数字9 -->
+
+        <Button
+            android:id="@+id/btn9"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="9"
+            android:textSize="25sp" />
+        <!-- 除号 -->
+
+        <Button
+            android:id="@+id/btn_chu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="÷"
+            android:textColor="#FF0000"
+            android:textSize="25sp" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- 数字4 -->
+
+        <Button
+            android:id="@+id/btn4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="4"
+            android:textSize="25sp" />
+        <!-- 数字5 -->
+
+        <Button
+            android:id="@+id/btn5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="5"
+            android:textSize="25sp" />
+        <!-- 数字6 -->
+
+        <Button
+            android:id="@+id/btn6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="6"
+            android:textSize="25sp" />
+        <!-- 乘号 -->
+
+        <Button
+            android:id="@+id/btn_cheng"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="×"
+            android:textColor="#FF0000"
+            android:textSize="25sp" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- 数字1 -->
+
+        <Button
+            android:id="@+id/btn1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="1"
+            android:textSize="25sp" />
+        <!-- 数字2 -->
+
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="2"
+            android:textSize="25sp" />
+        <!-- 数字3 -->
+
+        <Button
+            android:id="@+id/btn3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="3"
+            android:textSize="25sp" />
+        <!-- 减号 -->
+
+        <Button
+            android:id="@+id/btn_jian"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="-"
+            android:textColor="#FF0000"
+            android:textSize="25sp" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- 小数点 -->
+
+        <Button
+            android:id="@+id/btn_point"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="."
+            android:textColor="#FFFF00"
+            android:textSize="25sp" />
+        <!-- 数字0 -->
+
+        <Button
+            android:id="@+id/btn0"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="0"
+            android:textSize="25sp" />
+        <!-- 等号 -->
+
+        <Button
+            android:id="@+id/btn_equal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="="
+            android:textColor="#80FF80"
+            android:textSize="25sp" />
+        <!-- 加号 -->
+
+        <Button
+            android:id="@+id/btn_jia"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="+"
+            android:textColor="#FF0000"
+            android:textSize="25sp" />
+    </TableRow>
+
+</LinearLayout>

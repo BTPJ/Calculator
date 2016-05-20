@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_marginTop="2dp"
+        android:id="@+id/textView_body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="身高体重"
+        android:textColor="@android:color/holo_purple"/>
+
+    <TextView
+        android:id="@+id/textView_bmi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BMI"
+        android:textColor="@android:color/holo_green_dark"/>
+
+    <TextView
+        android:layout_marginBottom="2dp"
+        android:id="@+id/textView_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="时间"
+        android:textColor="@android:color/holo_red_dark"/>
+
+</LinearLayout>

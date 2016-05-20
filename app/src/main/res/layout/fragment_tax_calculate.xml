@@ -1,0 +1,133 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout_tax"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_tax"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    tools:context=".ui.fragment.TaxCalculateFragment">
+
+    <TextView
+        android:id="@+id/textView_title_taxCalculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="个人所得税计算器"
+        android:textColor="@android:color/holo_red_dark"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/editText_tax_before"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/textView_title_taxCalculate"
+        android:layout_marginTop="50dp"
+        android:background="@android:drawable/edit_text"
+        android:ems="7"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/textView_tax_before"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/editText_tax_before"
+        android:layout_alignTop="@id/editText_tax_before"
+        android:layout_marginRight="15dp"
+        android:layout_toLeftOf="@id/editText_tax_before"
+        android:ems="7"
+        android:gravity="end|center_vertical"
+        android:text="税前工资(元)"
+        android:textColor="@android:color/holo_purple"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/editText_social_insurance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/editText_tax_before"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/editText_tax_before"
+        android:layout_marginTop="20dp"
+        android:background="@android:drawable/edit_text"
+        android:ems="8"
+        android:inputType="number"
+        android:text="0" />
+
+    <TextView
+        android:id="@+id/textView_social_insurance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/editText_social_insurance"
+        android:layout_alignEnd="@id/textView_tax_before"
+        android:layout_alignRight="@id/textView_tax_before"
+        android:layout_alignTop="@id/editText_social_insurance"
+        android:ems="8"
+        android:gravity="end|center_vertical"
+        android:text="各项社会保险费(元)"
+        android:textColor="@android:color/holo_orange_light"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Spinner
+        android:id="@+id/spinner_tax_threshold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@id/editText_social_insurance"
+        android:layout_alignLeft="@+id/editText_social_insurance"
+        android:layout_alignRight="@id/editText_social_insurance"
+        android:layout_alignStart="@+id/editText_social_insurance"
+        android:layout_below="@id/editText_social_insurance"
+        android:layout_marginTop="20dp"
+        android:entries="@array/spinner_tax_threshold" />
+
+    <TextView
+        android:id="@+id/textView_tax_threshold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/spinner_tax_threshold"
+        android:layout_alignEnd="@id/textView_tax_before"
+        android:layout_alignRight="@id/textView_tax_before"
+        android:layout_alignTop="@id/spinner_tax_threshold"
+        android:ems="8"
+        android:gravity="end|center_vertical"
+        android:text="起征点(元)"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/button_calculate_tax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/holo_green_light"
+        android:layout_below="@+id/spinner_tax_threshold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:text="计    算" />
+
+    <TextView
+        android:id="@+id/textView_tax_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_calculate_tax"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@android:color/holo_red_dark" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:text="说明：如果计算的是外籍人士(包括港、澳、台),\n\t\t\t\t\t\t则个税起征点应设为4800元。"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@android:color/holo_red_light" />
+
+</RelativeLayout>
